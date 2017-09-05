@@ -132,17 +132,17 @@ string PerformDB(char** argv) {
   double N_Pu0 = Enricht * atof(argv[5]);
   double N_Pu1 = Enricht * atof(argv[6]) * atof(argv[7]);
   double N_Pu2 = Enricht * atof(argv[8]);
-  
+
   N_add += N_Pu6 + N_Pu8 + N_Pu0 + N_Pu1+ N_Pu2;
-  
+
   double N_Am1 = Enricht * atof(argv[6]) * (1 - atof(argv[7]));
   double N_Am2 = 0;//Enricht * atof(argv[9]);
   double N_Am3 = 0;//Enricht * atof(argv[10]);
   N_add += N_Am1 + N_Am2 + N_Am3;
-  
+
   double N_Np7 = 0;//Enricht * atof(argv[11]);
   N_add += N_Np7;
-  
+
   double N_Cm2 = 0;//Enricht * atof(argv[12]);
   double N_Cm3 = 0;//Enricht * atof(argv[13]);
   double N_Cm4 = 0;//Enricht * atof(argv[14]);
@@ -154,47 +154,47 @@ string PerformDB(char** argv) {
   N_add += N_Pu9;
   N_tot += N_add;
 
-  
+
   PowerDensity = atof(argv[9]);
 
 
   // !!! Should have  Sum of HN = 1
-  std::cout << "N_U5 "  << N_U5 << " " 
-       << "N_U8 "  << N_U8 << " " 
-       << "N_Pu8 " << N_Pu8 << " " 
-       << "N_Pu6 " << N_Pu6 << " " 
-       << "N_Pu9 " << N_Pu9 << " " 
-       << "N_Pu0 " << N_Pu0 << " " 
-       << "N_Pu1 " << N_Pu1 << " " 
-       << "N_Pu2 " << N_Pu2 << " " 
-       << "N_Am1 " << N_Am1 << " " 
-       //<< "N_Am2 " << N_Am2 << " " 
-       //<< "N_Am3 " << N_Am3 << " " 
-       //<< "N_Np7 " << N_Np7 << " " 
-       //<< "N_Cm2 " << N_Cm2 << " " 
-       //<< "N_Cm3 " << N_Cm3 << " " 
-       //<< "N_Cm4 " << N_Cm4 << " " 
-       //<< "N_Cm5 " << N_Cm5 << " " 
-       //<< "N_Cm6 " << N_Cm6 << " " 
+  std::cout << "N_U5 "  << N_U5 << " "
+       << "N_U8 "  << N_U8 << " "
+       << "N_Pu8 " << N_Pu8 << " "
+       << "N_Pu6 " << N_Pu6 << " "
+       << "N_Pu9 " << N_Pu9 << " "
+       << "N_Pu0 " << N_Pu0 << " "
+       << "N_Pu1 " << N_Pu1 << " "
+       << "N_Pu2 " << N_Pu2 << " "
+       << "N_Am1 " << N_Am1 << " "
+       //<< "N_Am2 " << N_Am2 << " "
+       //<< "N_Am3 " << N_Am3 << " "
+       //<< "N_Np7 " << N_Np7 << " "
+       //<< "N_Cm2 " << N_Cm2 << " "
+       //<< "N_Cm3 " << N_Cm3 << " "
+       //<< "N_Cm4 " << N_Cm4 << " "
+       //<< "N_Cm5 " << N_Cm5 << " "
+       //<< "N_Cm6 " << N_Cm6 << " "
        << "N_tot " << N_tot << std::endl;
 
   // Normalisation
   N_U5  = N_U5  / N_tot;
   N_U8  = N_U8  / N_tot;
-  
+
   N_Pu6 = N_Pu6 / N_tot;
   N_Pu8 = N_Pu8 / N_tot;
   N_Pu9 = N_Pu9 / N_tot;
   N_Pu0 = N_Pu0 / N_tot;
   N_Pu1 = N_Pu1 / N_tot;
   N_Pu2 = N_Pu2 / N_tot;
-  
+
   N_Am1 = N_Am1 / N_tot;
   N_Am2 = N_Am2 / N_tot;
   N_Am3 = N_Am3 / N_tot;
-  
+
   N_Np7 = N_Np7 / N_tot;
-  
+
   N_Cm2 = N_Cm2 / N_tot;
   N_Cm3 = N_Cm3 / N_tot;
   N_Cm4 = N_Cm4 / N_tot;
@@ -246,9 +246,11 @@ string PerformDB(char** argv) {
   // gMURE->SetDATADIR("/scratch/spallati/soft/SHARE/PROG/MURE/SL3/data/");
   // gMURE->SetDATADIR("/scratch/spallati/soft/SHARE/PROG/MURE/SL3/data.ENDFB.7.1/");
   gMURE->SetDATADIR(
-      "/home/mouginot/work/app/MURE/data.JEFF_3.1.1");
+//    "/home/mouginot/work/app/MURE/data.JEFF_3.1.1");
+     "/tmp/mouginot/opt/mure/data.JEFF_3.1.1");
 
-  BasePriority* BP = new BasePriority(); 
+
+  BasePriority* BP = new BasePriority();
   // BP->SetBuilderPriority("JOY");
   BP->SetBasePriority(0, "JEFF");
   BP->SetVersionPriority(0, "3.1.1", 0);
@@ -524,7 +526,7 @@ string PerformDB(char** argv) {
   //==========================================================================================
 
 
-  if (kcode == true) 
+  if (kcode == true)
   {
     gMURE->RunMCNP();
     gMURE->BuildMCNPFile();
@@ -1284,8 +1286,7 @@ void WriteDB() {
 //==========================================================================================
 /*
 
- g++  -o MOX MOX.cxx -I$MURE_include -I$MURE_ExternalPkg -L$MURE_lib -lMUREpkg
- -lvalerr -lmctal -fopenmp
+ g++  -o MOX MOX.cc -I$MURE_include -I$MURE_ExternalPkg -L$MURE_lib -lMUREpkg -lvalerr -lmctal -fopenmp
 
 
  */
