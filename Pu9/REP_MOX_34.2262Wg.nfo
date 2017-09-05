@@ -1,0 +1,96 @@
+To be used with : EQM_PWR_MLP_Kinf.cxx 
+with constructor : EQM_PWR_MLP_Kinf(string TMVAWeightPath,  int NumOfBatch, string InformationFile, double CriticalityThreshold)
+============================================
+    Informations needed by EQM_MLP_Kinf model    
+============================================
+
+Reactor Type :
+K_REACTOR REP
+
+Fuel Type :
+K_FUEL MOX
+
+Specific Power (W/gHM) :
+K_SPECPOWER  34.2262
+
+Maximal Burnup:
+K_MAXBURNUP 97.4999
+Maximal fissile content (algo use) :
+K_MAXFISCONTENT 0.1
+
+Z A I Name (input MLP) :
+K_ZAINAME 92 235 0 235U
+K_ZAINAME 92 238 0 238U
+K_ZAINAME 93 237 0 237Np
+K_ZAINAME 94 238 0 238Pu
+K_ZAINAME 94 239 0 239Pu
+K_ZAINAME 94 240 0 240Pu
+K_ZAINAME 94 241 0 241Pu
+K_ZAINAME 94 242 0 242Pu
+K_ZAINAME 95 241 0 241Am
+K_ZAINAME 95 242 1 242Amm
+K_ZAINAME 95 243 0 243Am
+K_ZAINAME 96 242 0 242Cm
+K_ZAINAME 96 243 0 243Cm
+K_ZAINAME 96 244 0 244Cm
+K_ZAINAME 96 245 0 245Cm
+K_ZAINAME 96 246 0 246Cm
+
+Name of stream for fabrication (fissile or fertile):
+Z A I Default_Proportion
+K_LIST 92 235 0 Fissile 1
+K_LIST 92 238 0 Fertile 1
+K_LIST 93 237 0 Fissile 1
+K_LIST 94 238 0 Fissile 1
+K_LIST 94 239 0 Fissile 1
+K_LIST 94 240 0 Fissile 1
+K_LIST 94 241 0 Fissile 1
+K_LIST 94 242 0 Fissile 1
+K_LIST 95 241 0 Fissile 1
+K_LIST 95 242 1 Fissile 1
+K_LIST 95 243 0 Fissile 1
+K_LIST 96 242 0 Fissile 1
+K_LIST 96 243 0 Fissile 1
+K_LIST 96 244 0 Fissile 1
+K_LIST 96 245 0 Fissile 1
+K_LIST 96 246 0 Fissile 1
+
+Starting fissile content in fuel for equivalence model calculation :
+k_firstguesscontent Fissile 0.3
+k_firstguesscontent Fertile 0.7
+
+Fuel range (Z A I min max) :
+K_ZAIL 92 235 0 1.71347e-06 0.0192414
+K_ZAIL 92 238 0 0.7854 0.968733
+K_ZAIL 93 237 0 1.6399e-08 0.000197294
+K_ZAIL 94 238 0 4.69729e-07 0.00396428
+K_ZAIL 94 239 0 0.0215941 0.189887
+K_ZAIL 94 240 0 1.54568e-06 0.0395636
+K_ZAIL 94 241 0 3.22813e-08 0.00704628
+K_ZAIL 94 242 0 1.58277e-07 0.00198804
+K_ZAIL 95 241 0 3.13083e-10 0.00748057
+K_ZAIL 95 242 1 1.3416e-07 0.0116249
+K_ZAIL 95 243 0 2.0439e-08 0.000199559
+K_ZAIL 96 242 0 1.48286e-09 0.00019391
+K_ZAIL 96 243 0 9.09118e-09 0.000197553
+K_ZAIL 96 244 0 2.4657e-09 0.000197112
+K_ZAIL 96 245 0 9.47206e-09 0.000197873
+K_ZAIL 96 246 0 2.33964e-09 0.000198597
+
+============================================
+     Data base generation informations      
+============================================
+
+ Date: 15/7/2017
+ Author(s): BaM
+ Author(s) contact: mouginot@wisc.edu
+ Depletion code: MURE
+ Simulated geometry: Cubic Assembly with mirror boundary
+ Nuclear data used in MURE
+	Cross section library: JEFF3.1.1
+	Fission yield library: JEFF3.1.1
+	S(alpha,beta) library: JEFF3.1.1
+ Half life cut [s] : 3223
+ Multi-group treatment: 17900
+ Additional informations: 
+

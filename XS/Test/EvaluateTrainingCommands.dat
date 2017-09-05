@@ -1,0 +1,6 @@
+in terminal type : 
+
+root
+int N = ; // with N the number of cross section trained (get it with wc -l ../Generate/_tmp/include_Train_XS/TrainingInput.cxx )
+.L deviations.C
+for(int i=0;i<N;i++) {stringstream ss;ss<<"../Generate/Training_output_"<<i<<".root";deviations(ss.str().c_str(),0,kTRUE,kFALSE,kFALSE); }

@@ -1,0 +1,116 @@
+#!/bin/sh
+
+#######################################
+############ DEFAULT IMPUT ############
+#######################################
+# Job Name
+JARG='AutoSub'
+
+#######################################
+############      CODE     ############
+#######################################
+
+
+if [ "$1" = "" ]
+then
+    echo '---------------------------------------------'
+    echo
+    echo "Pas de commande en argument de Qsub : EXIT..."
+    echo
+    echo "USE :"
+    echo
+    echo "Qsub commande_1 \; commande_2 \; ..."
+    echo "Qsub -n Job_Name -c \"Cmd1 ; cmd2;....\"  -p proc_numb"
+    echo
+    echo '---------------------------------------------'
+    exit
+fi
+
+NARG=$*
+JFLG=0
+CFLG=0
+PFLG=0
+
+while getopts  ":n:c:p:" flag; do
+  	case $flag in
+	n)
+		JFLG=1
+		JARG=$OPTARG
+
+	;;
+	c)
+		CFLG=1
+		CARG=$OPTARG
+
+	;;
+	p)
+		PFLG=1
+		PARG=$((OPTARG))
+	;;
+	\?)
+		echo "Invalid option: -$OPTARG" >&2
+	;;
+	esac
+
+done
+
+
+BATCH_FILE='/scratch/spallati/'${USER}'/.batch-pbs/QSUB/batch.txt'
+
+echo
+echo '--------------------------'
+echo 'qsub job..................'
+echo '--------------------------'
+echo
+
+if [ $JFLG -eq 1 ] 
+then
+	if [ $PFLG -ne 1 ]
+	then
+	PARG=1
+	fi
+	if [ $CFLG -ne 1 ]
+	then
+		echo '---------------------------------------------'
+		echo
+		echo "Pas de commande en argument de Qsub : EXIT..."
+		echo
+		echo "USE :"
+		echo
+		echo "Qsub commande_1 \; commande_2 \; ..."
+		echo "Qsub -n Job_Name -c \"Cmd1 ; cmd2;....\""
+		echo
+		echo '---------------------------------------------'
+		exit
+	else
+		echo 'commande : ' ${CARG}
+		echo '#PBS -N '${JARG} > ${BATCH_FILE}
+		echo '#PBS -S /bin/tcsh' >> ${BATCH_FILE}
+		echo '#PBS -l nodes=1:ppn='${PARG} >> ${BATCH_FILE}
+		echo '#PBS -l cput=240:00:00' >> ${BATCH_FILE}
+		echo '#PBS -S /bin/csh' >> ${BATCH_FILE}
+		echo '#PBS -j oe' >> ${BATCH_FILE}
+		echo 'cd ' `pwd` >> ${BATCH_FILE}
+		if [ $PARG -gt 1 ]
+		then
+			echo 'set OMP_NUM_THREADS = '$PARG >> ${BATCH_FILE}
+		fi
+		echo ${CARG} >> ${BATCH_FILE}
+	fi
+else
+	echo 'commande : '${NARG}
+	echo '#PBS -N '${JARG} > ${BATCH_FILE}
+	echo '#PBS -S /bin/tcsh' >> ${BATCH_FILE}
+	echo '#PBS -l nodes=1:ppn=1' >> ${BATCH_FILE}
+	echo '#PBS -l cput=240:00:00' >> ${BATCH_FILE}
+	echo '#PBS -j oe' >> ${BATCH_FILE}
+	echo 'cd ' `pwd` >> ${BATCH_FILE}
+	echo ${NARG} >> ${BATCH_FILE}
+
+fi
+echo
+qsub  ${BATCH_FILE}
+echo
+echo '---------------'
+echo 'qsub job : DONE'
+echo '---------------'
