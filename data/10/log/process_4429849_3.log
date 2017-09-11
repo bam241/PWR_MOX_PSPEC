@@ -1,0 +1,101 @@
+000 (4429849.003.000) 09/06 14:48:02 Job submitted from host: <128.105.244.190:9618?addrs=128.105.244.190-9618&noUDP&sock=2714685_05e2_3>
+...
+001 (4429849.003.000) 09/06 14:50:30 Job executing on host: <128.105.245.50:9618?addrs=128.105.245.50-9618+[--1]-9618&noUDP&sock=3863_c547_3>
+...
+006 (4429849.003.000) 09/06 14:50:39 Image size of job updated: 560
+	1  -  MemoryUsage of job (MB)
+	476  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 14:55:45 Image size of job updated: 560
+	1  -  MemoryUsage of job (MB)
+	548  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:05:43 Image size of job updated: 153564
+	146  -  MemoryUsage of job (MB)
+	149176  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:10:43 Image size of job updated: 193476
+	185  -  MemoryUsage of job (MB)
+	189076  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:15:43 Image size of job updated: 197244
+	189  -  MemoryUsage of job (MB)
+	192844  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:20:43 Image size of job updated: 201176
+	193  -  MemoryUsage of job (MB)
+	196780  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:25:45 Image size of job updated: 201652
+	193  -  MemoryUsage of job (MB)
+	197300  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:30:45 Image size of job updated: 203328
+	195  -  MemoryUsage of job (MB)
+	199024  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:40:47 Image size of job updated: 231152
+	222  -  MemoryUsage of job (MB)
+	226752  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:45:47 Image size of job updated: 235584
+	226  -  MemoryUsage of job (MB)
+	231272  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:50:48 Image size of job updated: 235732
+	226  -  MemoryUsage of job (MB)
+	231332  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 15:55:48 Image size of job updated: 237812
+	229  -  MemoryUsage of job (MB)
+	233504  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 16:00:49 Image size of job updated: 237964
+	229  -  MemoryUsage of job (MB)
+	233564  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 16:10:50 Image size of job updated: 239516
+	230  -  MemoryUsage of job (MB)
+	235116  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 16:15:52 Image size of job updated: 255056
+	245  -  MemoryUsage of job (MB)
+	250744  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 16:20:51 Image size of job updated: 255204
+	245  -  MemoryUsage of job (MB)
+	250804  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 19:26:09 Image size of job updated: 268380
+	259  -  MemoryUsage of job (MB)
+	264744  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 19:31:09 Image size of job updated: 268440
+	259  -  MemoryUsage of job (MB)
+	264764  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 19:36:09 Image size of job updated: 268768
+	259  -  MemoryUsage of job (MB)
+	265132  -  ResidentSetSize of job (KB)
+...
+006 (4429849.003.000) 09/06 19:41:10 Image size of job updated: 268828
+	259  -  MemoryUsage of job (MB)
+	265152  -  ResidentSetSize of job (KB)
+...
+005 (4429849.003.000) 09/06 20:21:01 Job terminated.
+	(0) Abnormal termination (signal 9)
+	(0) No core file
+		Usr 0 05:13:39, Sys 0 00:02:35  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 05:13:39, Sys 0 00:02:35  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	2257979  -  Run Bytes Sent By Job
+	17282  -  Run Bytes Received By Job
+	2257979  -  Total Bytes Sent By Job
+	17282  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            : 20091525 31457280  40505916
+	   Ioheavy              :                           1
+	   Memory (MB)          :      259      400       400
+...
